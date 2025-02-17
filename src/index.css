@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+::-webkit-scrollbar{
+    width: 7px;
+    height: 7px;
+  
+  }
+  
+  ::-webkit-scrollbar-thumb{
+    background: #181819;
+    border-radius: 10px;
+  }
+  
+  
+  ::-webkit-scrollbar-thumb:hover{
+  background:#6556cd;
+  
+  }
+  /* Dropdown container */
+.dropdown-container {
+  display: inline-block; /* Align dropdown inline with the heading */
+  /* margin-left: 20px; Add some spacing between the heading and dropdown */
+}
+
+/* Custom select wrapper */
+.custom-select {
+  position: relative;
+  width: 190px; /* Adjust width to fit the design */
+}
+
+/* Styling the select element */
+.custom-select select {
+  appearance: none; /* Remove default arrow */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 14px;
+  border: 2px solid #444; /* Dark border to match the card theme */
+  border-radius: 6px;
+  background-color: #333; /* Dark background to match the card theme */
+  color: white; /* White text for contrast */
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Hover and focus effects */
+.custom-select select:hover,
+.custom-select select:focus {
+  border-color:#6556CD; /* Blue border on hover/focus */
+  background-color: #444; /* Slightly lighter background on hover/focus */
+}
+
+/* Custom arrow */
+.custom-arrow {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid white; /* White arrow to match the text */
+  pointer-events: none; /* Ensure clicks go to the select element */
+}
+
+/* Disabled option styling */
+.custom-select select option[disabled] {
+  color: #777; /* Gray out the disabled option */
+}
+
+/* Options styling */
+.custom-select select option {
+  background-color: #333; /* Dark background for options */
+  color: white; /* White text for options */
+}
+
+/* Hover effect for options */
+.custom-select select option:hover {
+  background-color: #6556CD; /* Blue background on hover */
+}
