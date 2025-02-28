@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import Topnav from './partials/Topnav'
+import Topnav from './Partials/Topnav'
 import { data, useNavigate } from 'react-router-dom'
 import axios from '../utils/Axios'
 import Loading from './Loading'
@@ -62,7 +62,7 @@ function People() {
           next={GetPeople}
           hasMore={hasmore}
           loader={<h1>Loading....</h1>}>
-            <Cards data={People} title={category}/>
+            <Cards data={People} title="people"/>
           </InfiniteScroll>
           
       </div> 

@@ -49,6 +49,7 @@ function Topnav() {
           <div className="absolute z-[100] w-full max-h-[50vh] bg-white shadow-lg rounded-lg mt-2 overflow-auto">
             {searches.map((item, index) => (
               <Link
+                to={`${item.media_type}/details/${item.id}`}
                 key={index}
                 className="flex items-center p-2 hover:bg-zinc-100 transition duration-200"
               >

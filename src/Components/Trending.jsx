@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import Topnav from './partials/Topnav'
+import Topnav from './Partials/Topnav'
 import DropDown from './partials/DropDown'
 import { data, useNavigate } from 'react-router-dom'
 import axios from '../utils/Axios'
@@ -75,7 +75,7 @@ function Trending() {
       next={GetTrending}
       hasMore={hasmore}
       loader={<h1>Loading....</h1>}>
-        <Cards data={trending} title={category}/>
+        <Cards data={trending} title="tv"/>
       </InfiniteScroll>
       
   </div> 

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import Topnav from './partials/Topnav'
+import Topnav from './Partials/Topnav'
 import DropDown from './partials/DropDown'
 import { data, useNavigate } from 'react-router-dom'
 import axios from '../utils/Axios'
@@ -69,7 +69,7 @@ function Movies() {
           next={GetMovies}
           hasMore={hasmore}
           loader={<h1>Loading....</h1>}>
-            <Cards data={Movies} title={category}/>
+            <Cards data={Movies} title="movie" />
           </InfiniteScroll>
           
       </div> 
