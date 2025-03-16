@@ -10,7 +10,7 @@ import {
   Outlet,
 } from "react-router-dom";
 import Loading from "../Components/Loading";
-import HorizonatlCards from "./partials/HorizontalCards";
+import HorizontalCards from "./Partials/HorizontalCards"
 
 function PersonDetails() {
   // when we want to use the data of routes we use useParams
@@ -122,7 +122,14 @@ function PersonDetails() {
           <h1 className="mt-5 text-lg text-zinc-400 font-semibold">
             Popular For
           </h1>
-          {/* <HorizonatlCards data={info.combinedCredits.cast} /> */}
+          {/* <HorizontalCards data={info.combinedCredits.cast} /> */}
+          {info.combinedCredits ? (
+          <HorizontalCards data={info.combinedCredits.cast} />
+          ) : (
+            <p className="text-zinc-500">Loading credits...</p>
+          )}
+
+
           <div className="w-full flex justify-between">
             <h1 className="mt-5 text-xl text-zinc-400 font-semibold">
               Acting

@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
-function HorizontalCards({ data = [], isPeople = false }) {
+function HorizontalCards({ data =[], isPeople = false }) {
   if (!data.length) {
     return <p className="text-white text-center p-5">No results found.</p>;
   }
