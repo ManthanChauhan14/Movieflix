@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import Sidenav from './Partials/Sidenav'
-import Topnav from './Partials/Topnav'
+import Topnav from './partials/Topnav'
 import Header from './Partials/Header'
 import axios from '../utils/Axios'
-import HorizontalCards from './Partials/HorizontalCards'
+import HorizontalCards from './partials/HorizontalCards'
 import Loading from './Loading'
-import DropDown from './Partials/DropDown'
+import DropDown from './partials/DropDown'
 // import { all } from 'axios'
 
 function Home() {
@@ -55,9 +55,9 @@ function Home() {
   },[category])  
 
   return  wallpaper && trending? (
-    <>
+    <div className='flex overflow-hidden h-full'>
     <Sidenav/>
-    <div className='w-[80%] h-full'>
+    <div className='w-[80%] h-full '>
       <Topnav/>
       <Header data={wallpaper}/>
       <div className=" flex justify-between p-4" >
@@ -68,11 +68,11 @@ function Home() {
       <HorizontalCards data={trending}/>
       <div className="flex justify-between p-4 pb-0 pt-8">
           <h1 className="text-3xl font-bold text-white">🌟 Popular People</h1>
-        </div>
-        <HorizontalCards data={People} isPeople={true} />
+      </div>
+        <HorizontalCards data={People} isPeople={true}/>
     </div>
     
-    </>
+    </div>
   ): <Loading/>
 }
 

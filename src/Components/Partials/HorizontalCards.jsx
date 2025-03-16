@@ -16,12 +16,11 @@ function HorizontalCards({ data = [], isPeople = false }) {
       >
         {data.map((d, i) => (
           <Link
-            to={`/${d.media_type}/details/${d.id}`}
-            key={i}
-            className="min-w-[20%] bg-zinc-900 rounded-lg overflow-hidden shadow-lg relative cursor-pointer"
-            whileHover={{ scale: 1.08, boxShadow: "0px 8px 20px rgba(0, 0, 0, 0.3)" }}
-            transition={{ duration: 0.3 }}
-          >
+          to={isPeople ? `/people/details/${d.id}` : `/${d.media_type}/details/${d.id}`}
+          key={i}
+          className="min-w-[15%] h-[35vh] bg-zinc-900 rounded-lg overflow-hidden shadow-lg relative cursor-pointer mb-2"
+
+        >
             <img
               className="w-full h-62 object-cover"
               src={`https://image.tmdb.org/t/p/original${isPeople ? d.profile_path : (d.backdrop_path || d.poster_path)}`}

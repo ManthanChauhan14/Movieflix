@@ -1,14 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion"; // For animations
 
 function Header({ data }) {
-  const [showFullText, setShowFullText] = useState(false);
-
-  const toggleOverview = () => {
-    setShowFullText((prev) => !prev);
-  };
-
   return (
     <motion.div
       initial={{ opacity: 0, y: -20 }}
@@ -32,21 +26,18 @@ function Header({ data }) {
         {data.original_title || data.title || data.name || data.original_name}
       </motion.h1>
 
-      {/* Overview with Toggle */}
+      {/* Overview */}
       <motion.p
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 0.5, duration: 0.5 }}
         className="w-[70%] mb-3 mt-3 text-white text-lg"
       >
-        {showFullText ? data.overview : `${data.overview.slice(0, 260)}...`}
-        <button
-          onClick={toggleOverview}
-          className="text-gray-300 hover:text-blue-300 transition duration-300 ml-2"
-        >
-          {showFullText ? "less " : "more"}
-        </button>
-      </motion.p> 
+        {data.overview.slice(0, 260)}...
+        <Link to={`/${data.media_type}/details/${data.id}`} className="text-blue-400 hover:text-blue-300 transition duration-300">
+          more
+        </Link>
+      </motion.p>
 
       {/* Metadata */}
       <motion.div
@@ -72,7 +63,7 @@ function Header({ data }) {
         transition={{ delay: 0.9, duration: 0.5 }}
       >
         <Link
-          to="#"
+          to={`/${data.media_type}/details/${data.id}/trailer`}
           className="bg-[#6556CD] p-4 rounded text-white mt-4 inline-block hover:bg-[#7c6ce6] transition duration-300"
         >
           Watch Trailer

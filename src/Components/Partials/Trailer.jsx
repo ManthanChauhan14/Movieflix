@@ -20,6 +20,7 @@ function Trailer() {
       > </Link>
       {ytvideo ? (
         <ReactPlayer
+          controls
           height={700}
           width={1500}
           url={`https://www.youtube.com/watch?v=${ytvideo.key}`} />) : (<NotFound />
